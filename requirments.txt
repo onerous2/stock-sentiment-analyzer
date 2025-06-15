@@ -1,0 +1,4 @@
+requests
+nltk
+streamlit
+python-dotenv
