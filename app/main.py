@@ -1,6 +1,7 @@
 import streamlit as st
-from app.fetch_data import get_news_headlines
-from app.sentiment import get_sentiment_score
+from fetch_data import get_news_headlines
+from sentiment import get_sentiment_score
+
 
 st.set_page_config(page_title="Stock Sentiment Analyzer")
 st.title("📈 Stock Sentiment Analyzer")
