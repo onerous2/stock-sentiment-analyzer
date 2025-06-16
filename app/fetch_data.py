@@ -1,11 +1,15 @@
 import os
+import requests
 import streamlit as st
 from dotenv import load_dotenv
 
 load_dotenv()
 
-# Try Streamlit secrets first, fallback to .env
-API_KEY = st.secrets.get("NEWS_API_KEY", os.getenv("NEWS_API_KEY"))
+# Try Streamlit secrets, fallback to .env manually
+try:
+    API_KEY = st.secrets["NEWS_API_KEY"]
+except Exception:
+    API_KEY = os.getenv("NEWS_API_KEY")
 
 def get_news_headlines(query, max_articles=5):
     url = (
