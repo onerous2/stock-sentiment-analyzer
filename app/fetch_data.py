@@ -1,9 +1,10 @@
 import requests
 import os
+import streamlit as st
 from dotenv import load_dotenv
 
 load_dotenv()
-API_KEY = os.getenv("NEWS_API_KEY")
+API_KEY = st.secrets["NEWS_API_KEY"]
 
 def get_news_headlines(query, max_articles=5):
     url = (

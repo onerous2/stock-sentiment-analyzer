@@ -1,7 +1,9 @@
 import nltk
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
-nltk.download('vader_lexicon')
+# Only download once
+nltk.download("vader_lexicon")
+
 sia = SentimentIntensityAnalyzer()
 
 def get_sentiment_score(text):
